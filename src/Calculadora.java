@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import org.junit;
 
 public class Calculadora implements iCalculadora{
 	@Override
@@ -22,16 +23,16 @@ public class Calculadora implements iCalculadora{
 	@Override
 	public double division(double a, double b) {
 		double c = a/b;
-		
-		
+
+
 		return c;
-	}	
+	}
 
 	@Override
 	public double operar(String n) {
 		vector v = new vector ();
 		Scanner leer = new Scanner(n);
-		
+
 		while (leer.hasNext()) {
 			if (leer.hasNextInt()) {
 				v.push(leer.nextInt());
@@ -39,7 +40,7 @@ public class Calculadora implements iCalculadora{
 				int n2 = (int) v.pop();
 				int n1 = (int) v.pop();
 				String op = leer.next();
-				
+
 				if (op.equals("+")) {
 					v.push(n1 + n2);
 				} else if (op.equals("-")) {
@@ -49,7 +50,7 @@ public class Calculadora implements iCalculadora{
 				} else {
 					v.push(n1 / n2);
 				}
-				
+
 			}
 	}
 		double a = (int) v.pop();
